@@ -1,3 +1,4 @@
+
 // ⭐️ Example Challenge START ⭐️
 
 /**
@@ -48,8 +49,8 @@ function processFirstItem(stringList, callback) {
  * [2] Invoking `processLength` passing `[]` and `(num) => "There are " + num`,
  * should return "There are 0".
 */
-function processLength(/* CODE HERE */) {
-  /* CODE HERE */
+function processLength(list, callback) {
+  return callback(list.length);
 }
 
 /**
@@ -66,7 +67,8 @@ function processLength(/* CODE HERE */) {
  * Invoking `processLastItem` passing `['foo', 'bar']` and `(str) => str + str`,
  * should return 'barbar'.
 */
-function processLastItem(/* CODE HERE */) {
+function processLastItem(stringList, callback) {
+  return callback(stringList.pop());
   /* CODE HERE */
 }
 
@@ -88,7 +90,8 @@ function processLastItem(/* CODE HERE */) {
  * [2] Invoking `processSum` passing `-5`, '-1', and `(num) => num + 1000`,
  * should return 994.
 */
-function processSum(/* CODE HERE */) {
+function processSum(num1, num2, callback) {
+  return callback(num1 + num2);
   /* CODE HERE */
 }
 
@@ -110,7 +113,8 @@ function processSum(/* CODE HERE */) {
  * [2] Invoking `processProduct` passing 25 and 0 and `(num) => num + 1000`,
  * should return 1000.
 */
-function processProduct(/* CODE HERE */) {
+function processProduct(num1, num2, callback) {
+  return callback(num1*num2);
   /* CODE HERE */
 }
 
@@ -155,9 +159,19 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
  * 
  * [2] Invoking `lowerCaseStrings` with `['a', 'b', 'c' ]` will return `[ 'a', 'b', 'c' ]`.
 */
-function lowerCaseStrings(/* code here */) {
-  /* code here */
+function lowerCaseStrings(strings) {
+
+   //const newArray = [];
+
+   strings. forEach((arrItem) => {
+     console.log (arrItem.toLowerCase());
+   });
+  return (strings.toLowerCase());
 }
+  /* code here */
+
+  
+
 
 /**
  * ### Challenge `isItAnApple`
@@ -174,9 +188,33 @@ function lowerCaseStrings(/* code here */) {
  * 
  * [2] Invoking `isItAnApple` with `['a', 'b', 'c' ]` will return `[ false, false, false ]`.
 */
-function isItAnApple(/* code here */) {
-  /* code here */
+function isItAnApple(strings) {
+  const apple = strings.map((arrItem) => {
+    if (arrItem === 'apple') {
+      return true;
+    } else {
+      return false
+    }
+  });
+  return apple;
 }
+
+  
+    // for (let i = 0; i < arr.length; i++) {
+   //   if(arr[i] == 'apple') {
+   //     apple.push(true);
+   //   } else {
+   //     apple.push(false);
+   //   }
+   // }
+   //   return apple;
+    
+    
+    
+  
+
+  /* code here */
+
 
 /**
  * ### Challenge `removeApple`
@@ -194,9 +232,18 @@ function isItAnApple(/* code here */) {
  * 
  * [2] Invoking `removeApple` with `['a', 'b', 'c' ]` will return `[ 'a', 'b', 'c' ]`.
 */
-function removeApple(/* code here */) {
-  /* code here */
+
+//const noApple = [];
+function removeApple(strings) {
+  const goAway = strings.filter((arrItem) => {
+    return (arrItem !='apple');
+
+  });
+  return goAway;
 }
+
+  
+  /* code here */
 
 /**
  * ### Challenge `stringSmash`
@@ -213,7 +260,10 @@ function removeApple(/* code here */) {
  * 
  * [2] Invoking `stringSmash` with `['a', 'b', 'c' ]` will return `abc`.
 */
-function stringSmash(/* code here */) {
+function stringSmash(strings) {
+  const mushyFruit = strings.reduce((prev, curr) => prev + curr);
+
+  return mushyFruit;
   /* code here */
 }
 
@@ -367,4 +417,5 @@ if (typeof exports !== 'undefined') {
   if (getRunnersByTShirtSize) { module.exports.getRunnersByTShirtSize = getRunnersByTShirtSize }
   if (tallyUpDonations) { module.exports.tallyUpDonations = tallyUpDonations }
   if (counterMakerWithLimit) { module.exports.counterMakerWithLimit = counterMakerWithLimit }
-}
+}// @ts-ignore
+
